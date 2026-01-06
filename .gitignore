@@ -1,0 +1,16 @@
+# Blacklist everything
+*
+# Whitelist all directories
+!*/
+# Whitelist the file you're interested in.
+!*.c
+!*.h
+!*.md
+!*.pdf
+!*.sh
+!*.json
+!Makefile
+!.gitignore
+!.gitmodules
+!.clang-format
+!libft/
