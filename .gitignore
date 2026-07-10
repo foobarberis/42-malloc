@@ -9,6 +9,7 @@
 !*.pdf
 !*.sh
 !*.json
+!*.toml
 !Makefile
 !.gitignore
 !.gitmodules
