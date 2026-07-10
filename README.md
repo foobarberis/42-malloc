@@ -4,7 +4,7 @@ A zone-based, `mmap`-backed implementation of the dynamic memory allocation fami
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 - **[inc/malloc.h](inc/malloc.h)**: Core header containing structure definitions and alignment macros.
 - **[src/malloc.c](src/malloc.c)**: Entry point for `malloc` and heap extension logic.
@@ -16,7 +16,7 @@ A zone-based, `mmap`-backed implementation of the dynamic memory allocation fami
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Build the Library
 The project compiles into a shared library. If `HOSTTYPE` is not set, it defaults to your system architecture.
@@ -48,7 +48,7 @@ make evaluate
 
 ---
 
-## 📚 General Concepts
+## General Concepts
 
 This section provides a foundation for understanding how memory management works at the operating system level.
 
@@ -73,7 +73,7 @@ This section provides a foundation for understanding how memory management works
 
 ---
 
-## 🏗️ Architecture & Memory Layout
+## Architecture & Memory Layout
 
 We use a **Zone-based** allocation strategy to minimize `mmap` syscall frequency.
 
@@ -120,7 +120,7 @@ Prepended to every allocation. Ensures the payload start is **16-byte aligned**.
 
 ---
 
-## ⚙️ Core Algorithms
+## Core Algorithms
 
 #### Malloc
 1. **Routing**: Determine if the request is TINY, SMALL, or LARGE based on the aligned size.
@@ -154,7 +154,7 @@ The library provides a diagnostic function that prints the current state of all 
 
 ---
 
-## 🧪 Testing Suite
+## Testing Suite
 
 ### Internal Reliability
 - `make test`: Compiles [test/test_main.c](test/test_main.c) which exercises:
@@ -170,7 +170,7 @@ Specific tests from the subject are located in [test/eval/](test/eval/):
 
 ---
 
-## 💡 Defense / FAQ
+## Defense / FAQ
 
 **Q: Why is the page count ~300 at start?**
 A: This is the overhead of the dynamic linker, shared libraries (libc), and the initial environment. Our allocator also pre-allocates the first TINY/SMALL zones upon the first request.
@@ -188,7 +188,7 @@ A: The subject requires that each zone holds at least 100 allocations. Our calcu
 
 ---
 
-## 🛠️ Development & Standards
+## Development & Standards
 
 ### Coding Standards
 - **Standard Library**: Aside from the few libc functions which are authorized for this project, we rely on our own `libft` (prefixed with `f_`).
